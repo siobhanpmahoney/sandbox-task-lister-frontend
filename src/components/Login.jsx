@@ -21,9 +21,7 @@ const Login = (props) => {
   const onSubmit = () => {
 
     loginCurrentUser(inputValues)
-    .then(response => {
-      return response.jwt
-    })
+    .then(response => response.jwt)
     .then(jwtToken => {
       if (jwtToken) {
         ls.set('jwt_token', jwtToken)

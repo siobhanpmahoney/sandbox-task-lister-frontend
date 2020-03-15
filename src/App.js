@@ -4,24 +4,30 @@ import {connect} from 'react-redux'
 import { bindActionCreators } from 'redux';
 import {removeCurrentUserAction, fetchCurrentUserAction} from './actions'
 
-import Homepage from './components/Homepage/Homepage'
+import NavBar from './components/NavBar/NavBar'
 import Login from './components/Login'
+import SignUp from './components/SignUp'
+import Homepage from './components/Homepage/Homepage'
+import AccountPageContainer from './components/Account/AccountPageContainer'
+
 
 
 
 const App = () => {
   return (
     <div className="App">
+      <NavBar />
       <Switch>
         <Route exact path="/login" render={(routerProps) => <Login history={routerProps.history} /> } />
         <Route exact path="/" render={(routerProps) => <Homepage history={routerProps.history} /> } />
+        <Route exact path="/account" render={(routerProps) => <AccountPageContainer history={routerProps.history} /> } />
         <Redirect to='/' />
       </Switch>
 
     </div>
   );
 }
-// 
+//
 // function mapStateToProps(state, props) {
 // 	  return {
 // 	    user: state.user,

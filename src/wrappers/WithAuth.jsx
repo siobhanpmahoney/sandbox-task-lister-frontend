@@ -24,12 +24,10 @@ export default function (WrappedComponent) {
         return (
           <WrappedComponent {...this.props} />
         )
-      } else if (ls.get('jwt_token')) {
-        return <div>Loading</div>;
+      } else if (!this.props.user.id) {
+        return <Redirect to="/login" />
       } else {
-        return (
-          <Redirect to="/login" />
-        )
+        return <div>Loading</div>;
       }
     }
 

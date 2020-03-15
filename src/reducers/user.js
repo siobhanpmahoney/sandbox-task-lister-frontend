@@ -1,6 +1,6 @@
 import { SET_CURRENT_USER, REMOVE_CURRENT_USER} from '../actions'
 
-const DEFAULT_STATE = { id: null, email: null};
+const DEFAULT_STATE = { id: null, email: null, avatar: null};
 export const user = (state = DEFAULT_STATE, action) => {
   switch(action.type) {
 

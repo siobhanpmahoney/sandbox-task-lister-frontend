@@ -4,14 +4,10 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import WithAuth from '../../wrappers/WithAuth'
 
-const Homepage = () => {
-  return (
-    <div>
-      Home
-    </div>
-  )
-}
 
+const AccountPageContainer = () => {
+  return <div>Account</div>
+}
 
 function mapStateToProps(state, props) {
 	  return {
@@ -23,4 +19,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({}, dispatch)
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(WithAuth(Homepage)))
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(WithAuth(AccountPageContainer)))

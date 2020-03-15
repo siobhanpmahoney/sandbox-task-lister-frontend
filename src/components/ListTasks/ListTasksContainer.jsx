@@ -2,16 +2,18 @@ import React from 'react'
 import {withRouter} from 'react-router'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+
+import {removeCurrentUserAction, fetchCurrentUserAction} from '../../actions'
+
 import WithAuth from '../../wrappers/WithAuth'
 
-const Homepage = () => {
+const ListTasksContainer = () => {
   return (
     <div>
-      Home
+      List Page
     </div>
   )
 }
-
 
 function mapStateToProps(state, props) {
 	  return {
@@ -20,7 +22,7 @@ function mapStateToProps(state, props) {
 	}
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({}, dispatch)
+  return bindActionCreators({fetchCurrentUserAction, removeCurrentUserAction}, dispatch)
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(WithAuth(Homepage)))
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(WithAuth(ListTasksContainer)))
